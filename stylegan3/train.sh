@@ -1,0 +1,12 @@
+python3 train.py --outdir ./training-runs \
+                --cfg stylegan2 \
+                --data /mnt/dataset/Synthesis_Study/2022/AbdomenCT_abnormal_2.5d \
+                --gpus 4 \
+                --batch-gpu 80 \
+                --batch 320 \
+                --gamma 20 \
+                --mirror False \
+                --aug ada \
+                --kimg 20000 \
+                --snap 15 \
+                --metrics none
