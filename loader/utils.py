@@ -180,6 +180,18 @@ def apply_window(img, w_range, o_range=[0, 255], o_dtype='uint8'):
     return sitk.GetArrayFromImage(window(img_meta, w_range))
 
 
+def bodyct_dcm_to_pil(file:str, w_range, o_range=[0, 255], o_dtype='uint8', body_only=False):
+    from PIL import Image
+    img = dcm_to_array(file)
+    if body_only:
+        from .preprocessing import BodyBoundary
+        get_boundry = BodyBoundary()
+        img = get_boundry(np.squeeze(img))[np.newaxis,:,:]
+    img = apply_window(img, w_range=w_range)
+    return Image.fromarray(np.squeeze(img))
+
+
+
 
 
 
