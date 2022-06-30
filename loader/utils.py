@@ -175,21 +175,9 @@ def window_and_stack(img_meta,
 
     return sitk.Compose(img1, img2, img3) ## composition might be changed
 
-def apply_window(file: str, w_range, o_range=[0, 255], o_dtype='uint8', body_only=False):
-
-    if body_only:
-        from preprocessing import BodyBoundary
-        get_boundary = BodyBoundary()
-
-        img = dcm_to_array(file)
-        
-
-
-    img_meta = sitk.ReadImage(file)
-    img_meta = window(img_meta, w_range=w_range)
-    img = sitk.GetArrayFromImage(img_meta)
-    img = np.resize(img, (512, 512))
-    return img.astype(o_dtype)
+def apply_window(img, w_range, o_range=[0, 255], o_dtype='uint8'):
+    img_meta = sitk.GetImageFromArray(img)
+    return sitk.GetArrayFromImage(window(img_meta, w_range))
 
 
 
