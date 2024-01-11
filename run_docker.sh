@@ -1,10 +1,10 @@
 docker run -it \
 	--restart always \
 	--gpus all \
-	--name promedius_mjkim_pytorch_container_stylegan3 \
+	--name promedius_pytorch_container_stylegan3 \
 	--workdir /workspace \
 	-v /mnt:/mnt \
 	-v $PWD:/workspace \
 	--shm-size 16G \
 	-p 3336-3338:3336-3338 \
-	stylegan3:latest /bin/bash
+	stylegan3 /bin/bash
