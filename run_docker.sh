@@ -1,7 +1,7 @@
 docker run -it \
 	--restart always \
 	--gpus all \
-	--name promedius_pytorch_container_stylegan3 \
+	--name container_stylegan3 \
 	--workdir /workspace \
 	-v /mnt:/mnt \
 	-v $PWD:/workspace \
