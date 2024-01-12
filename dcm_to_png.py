@@ -20,7 +20,7 @@ def get_args_parser():
 
     # Dataset parameters
     parser.add_argument('--src-dir', default="/mnt/dataset/Synthesis_Study/2022/AbdomenCT", type=str, help='dataset folder dirname')
-    parser.add_argument('--dst-dir', default="'/mnt/dataset/Synthesis_Study/2022/AbdomenCT_png'", type=str, help='dataset folder dirname')
+    parser.add_argument('--dst-dir', default="/mnt/dataset/Synthesis_Study/2022/AbdomenCT_png", type=str, help='dataset folder dirname')
     parser.add_argument('--modality',  choices=['chestxray', 'abdomenct', 'brainct'], required=True)
     parser.add_argument('--resolution',  default=512, type=int)
 
@@ -40,7 +40,7 @@ if __name__ == '__main__':
                      'abdomenct': (-140, 210)}
     w_ragne = window_ranges[args.modality]
 
-    if args.modality == 'abdomenct':
+    i(f args.modality == 'abdomenct':
 
         for file in tqdm(files):
             pil_img = bodyct_dcm_to_pil(file, resolution, w_range=w_range, body_only=True)

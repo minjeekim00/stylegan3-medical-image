@@ -1,6 +1,6 @@
 python3 train.py --outdir ./training-runs \
                 --cfg stylegan2 \
-                --data /mnt/dataset/Synthesis_Study/2022/AbdomenCT_abnormal_2.5d \
+                --data /mnt/dataset/Synthesis_Study/2022/AbdomenCT_abnormal_png \
                 --gpus 4 \
                 --batch-gpu 80 \
                 --batch 320 \
