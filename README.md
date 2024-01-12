@@ -12,7 +12,7 @@
 docker run -it \
         --restart always \
         --gpus all \
-        --name promedius_pytorch_container_stylegan3 \
+        --name container_stylegan3 \
         --workdir /workspace \
         -v /mnt:/mnt \
         -v $PWD:/workspace \
@@ -31,9 +31,12 @@ source run_docker.sh
 
 1. Create PNG dataset using the notebook
 ```
-    ./01_AbdomenCT_dcm_to_png.ipynb
+    python3 dcm_to_png.py --src-dir /mnt/dataset/Synthesis_Study/2022/AbdomenCT \
+                          --dst-dir /mnt/dataset/Synthesis_Study/2022/AbdomenCT_png \
+                          --modality abdomenct \
+                          --resolution 512
 ```
-2. 
+2. Start train with provided hyperparameters
 
 ```
 cd stylegan3
