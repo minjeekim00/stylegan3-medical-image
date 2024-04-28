@@ -48,7 +48,7 @@ source train.sh
 ```
 python3 train.py --outdir ./training-runs \
                 --cfg stylegan2 \
-                --data /mnt/dataset/Synthesis_Study/2022/AbdomenCT_abnormal_png \
+                --data /mnt/dataset/Synthesis_Study/2022/AbdomenCT_png \
                 --gpus 4 \
                 --batch-gpu 80 \
                 --batch 320 \
