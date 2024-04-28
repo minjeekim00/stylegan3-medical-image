@@ -42,3 +42,20 @@ source run_docker.sh
 cd stylegan3
 source train.sh
 ```
+
+
+2-1. Presumably, your hyperparamters will be:
+```
+python3 train.py --outdir ./training-runs \
+                --cfg stylegan2 \
+                --data /mnt/dataset/Synthesis_Study/2022/AbdomenCT_abnormal_png \
+                --gpus 4 \
+                --batch-gpu 80 \
+                --batch 320 \
+                --gamma 20 \
+                --mirror False \ ## should be False
+                --aug ada \
+                --kimg 20000 \
+                --snap 15 \
+                --metrics none
+```
