@@ -1,0 +1,12 @@
+python3 stylegan3/train.py --outdir ./training-runs \
+			--cfg stylegan2 \
+			--data /mnt/dataset/Synthesis_Study/2022/AbdomenCT_png \ ## your path
+			--gpus 4 \
+			--batch-gpu 80 \
+			--batch 320 \
+			--gamma 10 \
+			--mirror False \ # should be False
+			--aug ada \
+			--kimg 20000 \
+			--snap 10 \
+			--metrics none

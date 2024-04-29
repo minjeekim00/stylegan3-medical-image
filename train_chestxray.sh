@@ -1,0 +1,12 @@
+python3 stylegan3train.py --outdir ./training-runs \
+			--cfg stylegan2 \
+			--data /mnt/dataset/Synthesis_Study/2022/ChestXray_png \ ## your path
+			--gpus 4 \
+			--batch-gpu 40 \ ## lower your batch size for x-ray
+			--batch 160 \
+			--gamma 25 \
+			--mirror False \ ## should be False
+			--aug ada \
+			--kimg 20000 \
+			--snap 15 \
+			--metrics none
