@@ -1,4 +1,4 @@
-# stylegan3-medical-image-AbdomenCT
+# stylegan3-medical-image
 
 ## Docker setting
 
